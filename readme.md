@@ -1,0 +1,1 @@
+### Welcome to the Melodify music player where you can play music stored in assets folder using HTML5 audio API.
