@@ -1,1 +1,1 @@
-### Welcome to the Melodify music player where you can play music stored in assets folder using HTML5 audio API.
+### Welcome to the Melodify music player where you can play music stored in assets folder using HTML5 audio API. It has features like- play and pause the song , changing to next and previous song with a progress bar, library where you can find all the songs, search pannel to search a song in the playlist. Also you can mark songs as your favourite and get them in the favourite songs panel.
