@@ -16,6 +16,7 @@ const sideBar = document.querySelector("#libraryId")
 const songs = ['starlight', 'friends', 'beach'];
 let songIndex = 0
 
+//song update logic for each time
 let updateSong = (song) => {
   title.innerText = song;
   audio.src = `/assets/${song}.mp3`;
@@ -23,14 +24,6 @@ let updateSong = (song) => {
   if (loveBtn.querySelector('i.bx').classList.contains('bxs-heart')){
     loveBtn.querySelector('i.bx').classList.remove('bxs-heart');
     loveBtn.querySelector('i.bx').classList.add('bx-heart');
-    title.classList.remove("fav_song")
-  }
-}
-let updateSongPrev = (song) => {
-  title.innerText = song;
-  audio.src = `/assets/${song}.mp3`;
-  cover.src = `/assets/${song}.jpg`;
-  if (loveBtn.querySelector('i.bx').classList.contains('bx-heart')){
     title.classList.remove("fav_song")
   }
 }
@@ -50,13 +43,12 @@ let pauseSong = () => {
   audio.pause();
 }
 //previous song logic
-
 let previousSong = () => {
   songIndex--;
   if (songIndex < 0) {
     songIndex = songs.length - 1;
   }
-  updateSongPrev(songs[songIndex]);
+  updateSong(songs[songIndex]);
   playSong();
 }
 //next song logic
@@ -118,6 +110,7 @@ let likeSong = () => {
     }
   }
 }
+
 //library song changing logic
 let libFunc = (songName) => {
   for (let item of songs){
@@ -186,7 +179,6 @@ function DurTime(e) {
       sec = sec < 10 ? '0' + sec : sec;
     }
   }
-
   get_sec(currentTime, sec);
   
   // get minutes duration
